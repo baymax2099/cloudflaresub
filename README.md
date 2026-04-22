@@ -35,7 +35,23 @@ cloudflaresub/
 ├─ wrangler.toml
 └─ package.json
 ```
+## 本地启动
+cd /path/to/cloudflaresub
 
+### 1. 安装依赖
+npm install
+
+### 2. 在 wrangler.toml 添加 KV binding（本地模拟用）
+# 追加以下内容：
+[[kv_namespaces]]
+binding = "SUB_STORE"
+id = "local"
+
+### 3. （可选）设置本地访问令牌
+echo 'SUB_ACCESS_TOKEN=my-local-token' > .dev.vars
+
+### 4. 启动
+npm run dev
 ## 快速开始（Cloudflare 网页端）
 ```text
 视频部署流程：https://youtu.be/E5PI0LsQ43M
