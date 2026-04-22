@@ -42,10 +42,12 @@ cd /path/to/cloudflaresub
 npm install
 
 ### 2. 在 wrangler.toml 添加 KV binding（本地模拟用）
-# 追加以下内容：
+追加以下内容：
+```text
 [[kv_namespaces]]
 binding = "SUB_STORE"
 id = "local"
+```
 
 ### 3. （可选）设置本地访问令牌
 echo 'SUB_ACCESS_TOKEN=my-local-token' > .dev.vars
